@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Bright - Smart Solar Street Lighting Project</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Solar Bright home">
+      <span class="brand-mark">SB</span>
+      <span>Solar Bright</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#objectives">Objectives</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#budget">Budget</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Smart Solar Street Lighting Project</p>
+        <h1>Solar Bright</h1>
+        <p>
+          Solar Bright is a sustainable initiative that powers street lights using solar energy while replacing
+          conventional bulbs with energy-efficient LED bulbs. The project helps reduce electricity costs, promotes
+          renewable energy, and creates safer, well-lit communities.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#how-it-works">See the System</a>
+          <a class="button secondary" href="#budget">View Budget</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-band" aria-label="Project highlights">
+      <article>
+        <span class="stat-value" id="energyToday">18.4 kWh</span>
+        <span class="stat-label">Energy generated today</span>
+      </article>
+      <article>
+        <span class="stat-value">42</span>
+        <span class="stat-label">Street lights powered</span>
+      </article>
+      <article>
+        <span class="stat-value">128 kg</span>
+        <span class="stat-label">Estimated CO2 saved</span>
+      </article>
+      <article>
+        <span class="stat-value" id="batteryLevel">86%</span>
+        <span class="stat-label">Battery charge level</span>
+      </article>
+    </section>
+
+    <section class="section two-column" id="about">
+      <div>
+        <p class="eyebrow">About the Project</p>
+        <h2>Cleaner lighting for safer roads</h2>
+        <p>
+          The purpose of Solar Bright is to create a reliable street lighting system that reduces the pressure on the
+          electricity grid and supports safer public spaces after sunset.
+        </p>
+      </div>
+      <div class="feature-list">
+        <article>
+          <h3>The Problem</h3>
+          <p>Traditional street lights can waste energy and create high electricity costs for communities.</p>
+        </article>
+        <article>
+          <h3>The Alternative</h3>
+          <p>Solar energy is renewable, locally available during the day, and ideal for powering efficient LED lighting.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section tinted" id="objectives">
+      <div class="section-heading">
+        <p class="eyebrow">Objectives</p>
+        <h2>What Solar Bright aims to achieve</h2>
+      </div>
+      <div class="objective-grid">
+        <article>Reduce electricity consumption.</article>
+        <article>Promote renewable energy.</article>
+        <article>Replace old bulbs with LED bulbs.</article>
+        <article>Improve road safety with reliable street lighting.</article>
+        <article>Support sustainable community development.</article>
+      </div>
+    </section>
+
+    <section class="section" id="how-it-works">
+      <div class="section-heading">
+        <p class="eyebrow">How It Works</p>
+        <h2>From sunlight to street light</h2>
+      </div>
+      <div class="process">
+        <article>
+          <span>1</span>
+          <h3>Solar Collection</h3>
+          <p>Solar panels collect sunlight during the day.</p>
+        </article>
+        <article>
+          <span>2</span>
+          <h3>Power Control</h3>
+          <p>The charge controller regulates the power.</p>
+        </article>
+        <article>
+          <span>3</span>
+          <h3>Battery Storage</h3>
+          <p>The battery stores the generated electricity.</p>
+        </article>
+        <article>
+          <span>4</span>
+          <h3>Automatic Lighting</h3>
+          <p>At night, the battery powers the LED street lights automatically.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section two-column benefits-section" id="benefits">
+      <div>
+        <p class="eyebrow">Benefits</p>
+        <h2>Practical gains for the community</h2>
+        <p>
+          Solar Bright combines renewable power with long-lasting LED bulbs to make public lighting more affordable,
+          dependable, and environmentally responsible.
+        </p>
+      </div>
+      <ul class="check-list">
+        <li>Saves electricity costs.</li>
+        <li>Environmentally friendly.</li>
+        <li>Low maintenance.</li>
+        <li>Reliable during power outages.</li>
+        <li>Long lifespan of LED lights.</li>
+        <li>Reduces carbon emissions.</li>
+      </ul>
+    </section>
+
+    <section class="section dashboard-section" id="features">
+      <div class="section-heading">
+        <p class="eyebrow">Live Project Demo</p>
+        <h2>Solar conditions and system indicators</h2>
+      </div>
+      <div class="dashboard">
+        <article class="weather-card">
+          <span class="card-icon">SUN</span>
+          <h3>Solar Conditions</h3>
+          <p id="weatherText">Sunny conditions with strong charging potential.</p>
+        </article>
+        <article>
+          <h3>Battery Charge</h3>
+          <div class="battery" aria-label="Battery charge indicator">
+            <span id="batteryFill"></span>
+          </div>
+          <p><strong id="batteryCopy">86%</strong> available for tonight.</p>
+        </article>
+        <article>
+          <h3>Community Impact</h3>
+          <p>42 street lights powered and 128 kg of estimated CO2 emissions saved.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="gallery">
+      <div class="section-heading">
+        <p class="eyebrow">Gallery</p>
+        <h2>Project visuals</h2>
+      </div>
+      <div class="gallery">
+        <figure>
+          <img src="assets/solar-street-lighting.png" alt="Solar powered LED street lights along a modern community road">
+          <figcaption>Solar panels and LED street lights working together.</figcaption>
+        </figure>
+        <article>
+          <h3>Gallery ideas</h3>
+          <ul>
+            <li>Solar panels</li>
+            <li>Street lights</li>
+            <li>Installation process</li>
+            <li>Before-and-after comparisons</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section budget-section" id="budget">
+      <div class="section-heading">
+        <p class="eyebrow">Budget</p>
+        <h2>Estimated project cost</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Estimated Cost (LKR)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Solar Panel</td>
+              <td>11,000-20,000</td>
+            </tr>
+            <tr>
+              <td>LED Bulb</td>
+              <td>1,500</td>
+            </tr>
+            <tr>
+              <td>Charge Controller</td>
+              <td>2,500</td>
+            </tr>
+            <tr>
+              <td>Wiring &amp; Connectors</td>
+              <td>1,000</td>
+            </tr>
+            <tr>
+              <td>Mounting Materials</td>
+              <td>1,500</td>
+            </tr>
+            <tr>
+              <td>Installation</td>
+              <td>2,500</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Project team details</h2>
+        <p>Add your project team name, university, email, and phone number here.</p>
+      </div>
+      <div class="contact-card">
+        <p><strong>Project Team:</strong> Solar Bright Team</p>
+        <p><strong>University:</strong> Your University Name</p>
+        <p><strong>Email:</strong> solarbright@example.com</p>
+        <p><strong>Phone:</strong> +94 00 000 0000</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Solar Bright - Smart Solar Street Lighting Project</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
