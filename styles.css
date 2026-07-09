@@ -489,6 +489,12 @@ tr:last-child td {
   border-bottom: 0;
 }
 
+.total-row td {
+  color: var(--green-dark);
+  background: #f4fbf5;
+  font-weight: 800;
+}
+
 .contact-section {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
