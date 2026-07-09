@@ -25,6 +25,7 @@ body {
   background: var(--paper);
   font-family: Inter, "Segoe UI", Arial, sans-serif;
   line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
 }
 
 img {
@@ -354,16 +355,17 @@ h3 {
 }
 
 .check-list li::before {
-  content: "✓";
+  content: "OK";
   display: inline-grid;
-  width: 24px;
+  width: 26px;
   height: 24px;
   margin: 0 12px 0 -32px;
   place-items: center;
   color: var(--white);
   background: var(--green);
   border-radius: 50%;
-  font-size: 0.8rem;
+  font-size: 0.62rem;
+  font-weight: 800;
 }
 
 .dashboard-section {
@@ -529,24 +531,77 @@ footer p {
 
 @media (max-width: 720px) {
   .site-header {
-    position: static;
+    position: sticky;
     align-items: flex-start;
     flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
   }
 
   .nav {
+    width: calc(100% + 32px);
+    margin: 0 -16px;
+    padding: 0 16px 3px;
+    flex-wrap: nowrap;
     justify-content: flex-start;
-    font-size: 0.88rem;
+    gap: 8px;
+    overflow-x: auto;
+    color: var(--ink);
+    font-size: 0.84rem;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav a {
+    flex: 0 0 auto;
+    padding: 8px 11px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 999px;
   }
 
   .hero {
-    min-height: 82vh;
-    padding-top: 72px;
-    padding-bottom: 116px;
+    min-height: 74vh;
+    padding: 64px 18px 96px;
+    align-items: end;
   }
 
   .hero::after {
-    background: linear-gradient(180deg, rgba(12, 38, 33, 0.82), rgba(12, 38, 33, 0.54));
+    background: linear-gradient(180deg, rgba(12, 38, 33, 0.34), rgba(12, 38, 33, 0.9));
+  }
+
+  .hero-media {
+    background-position: 58% center;
+  }
+
+  h1 {
+    font-size: clamp(3.1rem, 18vw, 4.4rem);
+  }
+
+  h2 {
+    font-size: clamp(1.85rem, 9vw, 2.45rem);
+  }
+
+  .hero-content p:not(.eyebrow) {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 24px;
+  }
+
+  .button {
+    width: 100%;
   }
 
   .stats-band,
@@ -557,12 +612,131 @@ footer p {
   }
 
   .section {
-    padding-top: 72px;
-    padding-bottom: 72px;
+    padding: 64px 18px;
+  }
+
+  .stats-band {
+    width: calc(100% - 24px);
+    margin-top: -48px;
+  }
+
+  .stats-band article,
+  .feature-list article,
+  .dashboard article,
+  .contact-card,
+  .gallery article {
+    padding: 18px;
+  }
+
+  .stat-value {
+    font-size: 1.55rem;
+  }
+
+  .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .two-column {
+    gap: 24px;
   }
 
   .objective-grid article,
   .process article {
     min-height: auto;
+  }
+
+  .process article {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    column-gap: 14px;
+    padding: 18px;
+  }
+
+  .process span {
+    grid-row: span 2;
+    margin-bottom: 0;
+  }
+
+  .process p {
+    margin: 0;
+  }
+
+  figure img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .contact-section {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .table-wrap {
+    overflow: visible;
+    background: transparent;
+    border: 0;
+  }
+
+  table,
+  thead,
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 12px;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--line);
+    text-align: right;
+    font-weight: 800;
+  }
+
+  td::before {
+    content: attr(data-label);
+    color: var(--muted);
+    text-align: left;
+    font-weight: 700;
+  }
+
+  tr:last-child td,
+  td:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .eyebrow {
+    font-size: 0.7rem;
+  }
+
+  .hero {
+    min-height: 78vh;
+  }
+
+  .hero-content p:not(.eyebrow),
+  .two-column p {
+    font-size: 0.96rem;
+  }
+
+  .check-list li {
+    padding: 14px 14px 14px 46px;
   }
 }
