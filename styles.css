@@ -68,6 +68,15 @@ a {
   text-decoration: none;
 }
 
+.brand small {
+  display: block;
+  margin-top: 1px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .brand-mark {
   display: grid;
   width: 38px;
@@ -170,9 +179,9 @@ a {
 .hero-media {
   position: absolute;
   inset: 0;
-  background-image: url("assets/solar-street-lighting.png");
+  background-image: url("assets/impact-360-team.jpeg");
   background-size: cover;
-  background-position: center;
+  background-position: center 34%;
   transform: scale(1.02);
 }
 
@@ -205,7 +214,7 @@ p {
 
 h1 {
   margin: 0;
-  font-size: clamp(3rem, 10vw, 7rem);
+  font-size: clamp(2.7rem, 8vw, 5.8rem);
   line-height: 0.95;
   letter-spacing: 0;
 }
@@ -227,6 +236,16 @@ h3 {
   margin: 22px 0 0;
   color: rgba(255, 255, 255, 0.9);
   font-size: clamp(1.05rem, 2vw, 1.25rem);
+}
+
+.hero-subtitle {
+  max-width: none;
+  margin: 12px 0 0;
+  color: #ffe1a1;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .hero-actions {
@@ -524,9 +543,21 @@ h3 {
   transition: width 400ms ease;
 }
 
-.gallery {
+.gallery,
+.photo-gallery {
   grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
   align-items: stretch;
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.photo-gallery .featured-photo {
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
 figure {
@@ -543,6 +574,16 @@ figure img {
   object-fit: cover;
 }
 
+.photo-gallery figure img {
+  height: 100%;
+  min-height: 280px;
+}
+
+.photo-gallery .featured-photo img {
+  min-height: 580px;
+  object-position: center 36%;
+}
+
 figcaption {
   padding: 14px 18px;
   color: var(--muted);
@@ -552,53 +593,6 @@ figcaption {
 .gallery ul {
   margin: 14px 0 0;
   padding-left: 20px;
-}
-
-.budget-section {
-  background: #edf4ef;
-}
-
-.table-wrap {
-  width: min(100%, 820px);
-  margin: 0 auto;
-  overflow-x: auto;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: 0 12px 28px rgba(22, 33, 31, 0.07);
-}
-
-table {
-  width: 100%;
-  min-width: 560px;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  padding: 18px 22px;
-  border-bottom: 1px solid var(--line);
-  text-align: left;
-}
-
-tbody tr:nth-child(even) td {
-  background: #f8fbf8;
-}
-
-th {
-  color: var(--green-dark);
-  font-size: 0.92rem;
-  text-transform: uppercase;
-}
-
-tr:last-child td {
-  border-bottom: 0;
-}
-
-.total-row td {
-  color: var(--green-dark);
-  background: #eaf6ee;
-  font-weight: 800;
 }
 
 .contact-section {
@@ -661,8 +655,18 @@ footer p {
 
   .two-column,
   .gallery,
+  .photo-gallery,
   .contact-section {
     grid-template-columns: 1fr;
+  }
+
+  .photo-gallery .featured-photo {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .photo-gallery .featured-photo img {
+    min-height: 420px;
   }
 }
 
@@ -730,11 +734,11 @@ footer p {
   }
 
   .hero-media {
-    background-position: center;
+    background-position: center 35%;
   }
 
   h1 {
-    font-size: clamp(3rem, 16vw, 4rem);
+    font-size: clamp(2.8rem, 14vw, 3.6rem);
   }
 
   h2 {
@@ -842,60 +846,14 @@ footer p {
     aspect-ratio: 4 / 3;
   }
 
+  .photo-gallery figure img,
+  .photo-gallery .featured-photo img {
+    min-height: 0;
+    height: auto;
+  }
+
   .contact-section {
     gap: 20px;
-  }
-}
-
-@media (max-width: 560px) {
-  .table-wrap {
-    overflow: visible;
-    background: transparent;
-    border: 0;
-  }
-
-  table,
-  thead,
-  tbody,
-  tr,
-  td {
-    display: block;
-    width: 100%;
-    min-width: 0;
-  }
-
-  thead {
-    display: none;
-  }
-
-  tr {
-    margin-bottom: 12px;
-    overflow: hidden;
-    background: var(--white);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-  }
-
-  td {
-    display: flex;
-    justify-content: space-between;
-    gap: 18px;
-    padding: 13px 16px;
-    border-bottom: 1px solid var(--line);
-    text-align: right;
-    font-weight: 800;
-  }
-
-  td::before {
-    content: attr(data-label);
-    color: var(--muted);
-    text-align: left;
-    font-weight: 700;
-  }
-
-  tr:last-child td,
-  td:last-child {
-    border-bottom: 0;
   }
 }
 
